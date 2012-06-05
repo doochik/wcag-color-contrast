@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WCAG Color Contast tests</title>
+
+    <script src="jasmine/jasmine.js"></script>
+    <script src="jasmine/jasmine-html.js"></script>
+    <link rel="stylesheet" type="text/css" href="jasmine/jasmine.css"/>
+
+    <script src="wcag-color-contrast.js"></script>
+</head>
+<body>
+<script>
+    (function () {
+
+        describe("Test suite", function() {
+
+            it('#FFFFFF and #000000', function() {
+                expect(WCAGColorContrast.ratio('FFFFFF', '000000')).toBe(21);
+            });
+
+            it('#000000 and #FFFFFF', function() {
+                expect(WCAGColorContrast.ratio('000000', 'FFFFFF')).toBe(21);
+            });
+
+            it('#8883C4 and #1169FF', function() {
+                expect(WCAGColorContrast.ratio('8883C4', '1169FF').toFixed(2)).toBe('1.36');
+            });
+        });
+
+        var jasmineEnv = jasmine.getEnv();
+        jasmineEnv.updateInterval = 250;
+
+        var htmlReporter = new jasmine.HtmlReporter();
+        jasmineEnv.addReporter(htmlReporter);
+        jasmineEnv.specFilter = function (spec) {
+            return htmlReporter.specFilter(spec);
+        };
+
+        window.onload = function () {
+            execJasmine();
+        };
+
+        function execJasmine() {
+            jasmineEnv.execute();
+        }
+    })();
+</script>
+</body>
+</html>

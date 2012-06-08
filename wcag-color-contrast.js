@@ -3,7 +3,8 @@
  * @namespace ColorContrast
  * @see http://www.w3.org/TR/WCAG20-TECHS/G17.html
  * @author Alexey Androsov <doochik@ya.ru>, Sergey Gorobtsov <grey-evil@ya.ru>
- * @licence GPL/MIT
+ * @licence GPLv3
+ * @version 0.1
  */
 var WCAGColorContrast = {
 

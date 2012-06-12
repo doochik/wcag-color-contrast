@@ -5,12 +5,13 @@
  code generator otherwise the changes will be lost.
  */
 var dashcodePartSpecs = {
-    "button-check": { "creationFunction": "CreateButton", "leftImageWidth": 5, "rightImageWidth": 5, "text": "Сравнить" },
+    "button-check": { "creationFunction": "CreateButton", "leftImageWidth": 6, "rightImageWidth": 6, "text": "Сравнить" },
     "done": { "creationFunction": "CreateGlassButton", "onclick": "showFront", "text": "Done" },
     "example-text1": { "view": "DC.Text" },
     "example-text2": { "view": "DC.Text" },
     "example1": { "creationFunction": "CreateShape", "noBackground": true },
     "example2": { "creationFunction": "CreateShape", "noBackground": true },
+    "infobutton": { "backgroundStyle": "black", "creationFunction": "CreateInfoButton", "foregroundStyle": "white", "frontID": "front", "onclick": "showBack" },
     "result": { "view": "DC.Text" },
     "text": { "text": "© 2012 Alexey Androsov, Sergey Gorobtsov", "view": "DC.Text" },
     "text1": { "text": "Licenced under GPLv3", "view": "DC.Text" },
@@ -18,6 +19,7 @@ var dashcodePartSpecs = {
     "text3": { "text": "Фон #", "view": "DC.Text" },
     "text4": { "text": "https://github.com/doochik/wcag-color-contrast", "view": "DC.Text" }
 };
+
 
 
 

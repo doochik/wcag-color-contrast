@@ -91,6 +91,8 @@
 			</array>
 			<key>TemplateIdentifier</key>
 			<string>com.apple.Dashcode.template.custom</string>
+			<key>UseCustomAppIcon</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>CYProjectFormatVersion</key>

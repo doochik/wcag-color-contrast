@@ -52,7 +52,6 @@ body {
 }
 
 #example-text2 {
-    font-family: 'Lucida Grande', Arial, sans-serif;
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
@@ -61,9 +60,10 @@ body {
     white-space: nowrap;
     color: rgb(255, 110, 46);
     height: 29px;
-    left: 140px;
-    top: 167px;
-    right: 141px;
+    left: 50px;
+    font-family: Arial;
+    top: 169px;
+    right: 50px;
     width: auto;
 }
 
@@ -72,7 +72,6 @@ body {
 }
 
 #example-text1 {
-    font-family: 'Lucida Grande', Arial, sans-serif;
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
@@ -81,14 +80,15 @@ body {
     font-size: 13px;
     color: rgb(0, 0, 0);
     height: 17px;
-    left: 140px;
     top: 125px;
-    right: 141px;
     width: auto;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
+    left: 50px;
+    right: 50px;
+    font-family: Arial;
 }
 
 .selected #example-text1 {
@@ -98,39 +98,47 @@ body {
 #example1 {
     position: absolute;
     height: 34px;
-    left: 33px;
     top: 116px;
-    right: 34px;
     width: auto;
     border-radius: 8px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+    left: 30px;
+    right: 30px;
 }
 
 #rgb1 {
     position: absolute;
     color: black;
-    font-family: HelveticaNeue;
     text-align: center;
-    width: 89px;
-    font-size: 16pt;
     height: 25px;
-    left: 33px;
     top: 50px;
+    font-size: 13pt;
+    left: 30px;
+    font-family: Arial;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    width: 86px;
 }
 
 #rgb2 {
     position: absolute;
     color: black;
     font-family: HelveticaNeue;
-    font-size: 16pt;
     text-align: center;
-    width: 89px;
     height: 25px;
-    left: 140px;
     top: 50px;
+    font-size: 13pt;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    width: 86px;
+    left: 140px;
 }
 
 #button-check {
@@ -139,27 +147,27 @@ body {
     -khtml-user-select: none;
     position: absolute;
     width: 180px;
-    font-size: 16px;
     font-family: 'Helvetica Neue';
     opacity: 0.86;
     color: rgb(0, 0, 0);
     height: 31px;
-    left: 246px;
     top: 50px;
+    font-size: 13px;
+    left: 249px;
 }
 
 #text2 {
-    font-family: 'Lucida Grande', Arial, sans-serif;
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
     white-space: nowrap;
-    font-size: 16px;
     text-align: center;
     height: 18px;
-    left: 50px;
     top: 28px;
-    right: 350px;
+    font-family: Arial;
+    font-size: 13px;
+    left: 30px;
+    right: 339px;
     width: auto;
 }
 
@@ -168,17 +176,17 @@ body {
 }
 
 #text3 {
-    font-family: 'Lucida Grande', Arial, sans-serif;
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
     white-space: nowrap;
-    font-size: 16px;
     text-align: center;
     height: 18px;
-    left: 157px;
     top: 28px;
-    right: 243px;
+    font-family: Arial;
+    font-size: 13px;
+    left: 140px;
+    right: 229px;
     width: auto;
 }
 
@@ -195,10 +203,10 @@ body {
     white-space: nowrap;
     font-size: 16px;
     height: 18px;
-    left: 33px;
     top: 89px;
-    right: 34px;
     width: auto;
+    left: 30px;
+    right: 30px;
 }
 
 .selected #result {
@@ -208,15 +216,15 @@ body {
 #example2 {
     position: absolute;
     height: 34px;
-    left: 33px;
     top: 160px;
-    right: 34px;
     width: auto;
     border-radius: 8px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+    left: 30px;
+    right: 30px;
 }
 
 #front {
@@ -229,7 +237,6 @@ body {
 
 #text {
     font-size: 13px;
-    font-family: 'Lucida Grande', Arial, sans-serif;
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
@@ -239,6 +246,7 @@ body {
     width: auto;
     height: auto;
     color: rgb(255, 255, 255);
+    font-family: Arial;
 }
 
 .selected #text {
@@ -247,7 +255,6 @@ body {
 
 #text1 {
     font-size: 13px;
-    font-family: 'Lucida Grande', Arial, sans-serif;
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
@@ -257,6 +264,7 @@ body {
     width: auto;
     height: auto;
     color: rgb(255, 255, 255);
+    font-family: Arial;
 }
 
 .selected #text1 {
@@ -265,7 +273,6 @@ body {
 
 #text4 {
     font-size: 13px;
-    font-family: 'Lucida Grande', Arial, sans-serif;
     text-overflow: ellipsis;
     overflow: hidden;
     position: absolute;
@@ -275,8 +282,20 @@ body {
     top: 85px;
     width: auto;
     height: auto;
+    font-family: Arial;
 }
 
 .selected #text4 {
     color: white;
+}
+
+#infobutton {
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    right: auto;
+    bottom: auto;
+    margin-top: 0px;
+    left: 429px;
+    top: 197px;
 }

@@ -4,7 +4,7 @@
  * @see http://www.w3.org/TR/WCAG20-TECHS/G17.html
  * @author Alexey Androsov <doochik@ya.ru>, Sergey Gorobtsov <grey-evil@ya.ru>
  * @licence GPLv3
- * @version 0.1
+ * @version 0.11
  */
 var WCAGColorContrast = {
 
@@ -15,8 +15,16 @@ var WCAGColorContrast = {
      * @return {Number}
      */
     ratio: function(rgb1, rgb2) {
-        var sRGB1 = this.RGBtosRGB(rgb1);
-        var sRGB2 = this.RGBtosRGB(rgb2);
+        if (this.validRGB(rgb1)) {
+            var sRGB1 = this.RGBtosRGB(rgb1);
+        } else {
+            throw 'Invalid color ' + rgb1;
+        }
+        if (this.validRGB(rgb2)) {
+            var sRGB2 = this.RGBtosRGB(rgb2);
+        } else {
+            throw 'Invalid color ' + rgb2;
+        }
 
         var L1 = this.sRGBLightness(sRGB1);
         var L2 = this.sRGBLightness(sRGB2);
@@ -36,6 +44,9 @@ var WCAGColorContrast = {
      * @return {Number[]} [R, G, B]
      */
     RGBtosRGB: function(rgb) {
+        if (rgb.length === 3) {
+            rgb += rgb;
+        }
         return [
             parseInt(rgb.slice(0,2), 16) / 255,
             parseInt(rgb.slice(2,4), 16) / 255,
@@ -60,5 +71,14 @@ var WCAGColorContrast = {
         return 0.2126 * (RsRGB <= 0.03928 ? RsRGB / 12.92 : Math.pow((RsRGB+0.055)/1.055, 2.4)) +
             0.7152 * (GsRGB <= 0.03928 ? GsRGB / 12.92 : Math.pow((GsRGB+0.055)/1.055, 2.4)) +
             0.0722 * (BsRGB <= 0.03928 ? BsRGB / 12.92 : Math.pow((BsRGB+0.055)/1.055, 2.4));
+    },
+
+    /**
+     * Validate RGB string.
+     * @param {String} rgb Color.
+     * @return {Boolean}
+     */
+    validRGB: function(rgb) {
+        return rgb && (/^[a-f0-9]{3}$/i.test(rgb) || /^[a-f0-9]{6}$/i.test(rgb));
     }
 };

@@ -122,7 +122,7 @@ body {
     border-top-right-radius: 6px;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
-    width: 86px;
+    width: 182px;
 }
 
 #rgb2 {
@@ -131,29 +131,14 @@ body {
     font-family: HelveticaNeue;
     text-align: center;
     height: 25px;
-    top: 50px;
     font-size: 13pt;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
-    width: 86px;
-    left: 140px;
-}
-
-#button-check {
-    text-align: center;
-    cursor: default;
-    -khtml-user-select: none;
-    position: absolute;
-    width: 180px;
-    font-family: 'Helvetica Neue';
-    opacity: 0.86;
-    color: rgb(0, 0, 0);
-    height: 31px;
+    left: 230px;
     top: 50px;
-    font-size: 13px;
-    left: 249px;
+    width: 193px;
 }
 
 #text2 {
@@ -161,14 +146,14 @@ body {
     overflow: hidden;
     position: absolute;
     white-space: nowrap;
-    text-align: center;
     height: 18px;
     top: 28px;
     font-family: Arial;
     font-size: 13px;
     left: 30px;
-    right: 339px;
+    right: 241px;
     width: auto;
+    text-align: center;
 }
 
 .selected #text2 {
@@ -180,14 +165,14 @@ body {
     overflow: hidden;
     position: absolute;
     white-space: nowrap;
-    text-align: center;
     height: 18px;
     top: 28px;
     font-family: Arial;
     font-size: 13px;
-    left: 140px;
-    right: 229px;
+    left: 230px;
+    right: 30px;
     width: auto;
+    text-align: center;
 }
 
 .selected #text3 {

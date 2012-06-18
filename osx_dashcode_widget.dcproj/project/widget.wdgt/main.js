@@ -11,44 +11,6 @@
 function load()
 {
     dashcode.setupParts();
-
-    document.getElementById('button-check').onclick = function() {
-        localizedString = dashcode.getLocalizedString('Check');
-        console.log(localizedString)
-        
-        var rgb1 = document.getElementById('rgb1').value;
-        var rgb2 = document.getElementById('rgb2').value;
-        if (/^[0-9A-F]{6}$/i.test(rgb1) && /^[0-9A-F]{6}$/i.test(rgb2)) {
-            var result = WCAGColorContrast.ratio(rgb1, rgb2);
-            document.getElementById('result').innerHTML = result.toFixed(1) + ':1';
-
-            var text1 = document.getElementById('example-text1');
-            text1.style.color = '#' + rgb1
-            if (result > 7) {
-                text1.innerHTML = 'Удовлетворяет';
-            } else {
-                text1.innerHTML = 'Не удовлетворяет';
-            }
-            
-            var text2 = document.getElementById('example-text2');
-            text2.style.color = '#' + rgb1;
-            if (result > 4.5) {
-                text2.innerHTML = 'Удовлетворяет';
-            } else {
-                text2.innerHTML = 'Не удовлетворяет';
-            }
-
-            
-            document.getElementById('example1').style.backgroundColor = '#' + rgb2;
-            document.getElementById('example1').style.border = '1px solid #' + rgb1;
-            
-            document.getElementById('example2').style.backgroundColor = '#' + rgb2;
-            document.getElementById('example2').style.border = '1px solid #' + rgb1;
-            
-        } else {
-            document.getElementById('result').innerHTML = 'Надо указать два цвета в HEX';
-        }
-    }
 }
 
 //
@@ -145,4 +107,65 @@ if (window.widget) {
     widget.onhide = hide;
     widget.onshow = show;
     widget.onsync = sync;
+}
+
+
+function onkeydown_rgb(event)
+{
+    if (event && event.which) {
+       var key = event.which;    
+       var char = String.fromCharCode(key);
+       if (/[a-f0-9]/i.test(char)) {
+           window.setTimeout(calcRatio, 1);
+       } else if (
+           key != 8/*backspace*/ && key != 9/*tab*/ && key != 13/*enter*/ && key != 46/*del*/
+           && !(key == 86 && (event.metaKey || event.ctrlKey))
+       ) {
+           event.preventDefault();
+       }
+    }
+}
+
+function onpaste_rgb(event) {
+    var input = event.target;
+    var oldValue = input.value;
+    window.setTimeout(function(){
+        if (WCAGColorContrast.validRGB(input.value)) {
+            calcRatio();
+        } else {
+            input.value = oldValue;
+        }
+    });
+}
+
+function calcRatio() {
+    var rgb1 = document.getElementById('rgb1').value;
+    var rgb2 = document.getElementById('rgb2').value;
+    if (WCAGColorContrast.validRGB(rgb1) && WCAGColorContrast.validRGB(rgb2)) {
+        var result = WCAGColorContrast.ratio(rgb1, rgb2);
+        document.getElementById('result').innerHTML = result.toFixed(1) + ':1';
+
+        var text1 = document.getElementById('example-text1');
+        text1.style.color = '#' + rgb1
+        if (result > 7) {
+            text1.innerHTML = 'Удовлетворяет';
+        } else {
+            text1.innerHTML = 'Не удовлетворяет';
+        }
+
+        var text2 = document.getElementById('example-text2');
+        text2.style.color = '#' + rgb1;
+        if (result > 4.5) {
+            text2.innerHTML = 'Удовлетворяет';
+        } else {
+            text2.innerHTML = 'Не удовлетворяет';
+        }
+
+        document.getElementById('example1').style.backgroundColor = '#' + rgb2;
+        document.getElementById('example1').style.border = '1px solid #' + rgb1;
+
+        document.getElementById('example2').style.backgroundColor = '#' + rgb2;
+        document.getElementById('example2').style.border = '1px solid #' + rgb1;
+
+    }
 }

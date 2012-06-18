@@ -14,18 +14,53 @@
 <script>
     (function () {
 
-        describe("Test suite", function() {
+        describe("Test validate", function() {
+            it('valid #FFFFFF', function() {
+                expect(WCAGColorContrast.validRGB('FFFFFF')).toBeTruthy();
+            });
+            it('valid #FFF', function() {
+                expect(WCAGColorContrast.validRGB('FFF')).toBeTruthy();
+            });
+            it('valid #111', function() {
+                expect(WCAGColorContrast.validRGB('111')).toBeTruthy();
+            });
+            it('valid #f11', function() {
+                expect(WCAGColorContrast.validRGB('f11')).toBeTruthy();
+            });
+            it('invalid #11', function() {
+                expect(WCAGColorContrast.validRGB('11')).toBeFalsy();
+            });
+            it('invalid #11123', function() {
+                expect(WCAGColorContrast.validRGB('11123')).toBeFalsy();
+            });
+            it('invalid #x12345', function() {
+                expect(WCAGColorContrast.validRGB('x12345')).toBeFalsy();
+            });
+        });
 
-            it('#FFFFFF and #000000', function() {
+        describe("Test contrast", function() {
+
+            it('#FFFFFF and #000000 must be 21', function() {
                 expect(WCAGColorContrast.ratio('FFFFFF', '000000')).toBe(21);
             });
 
-            it('#000000 and #FFFFFF', function() {
+            it('#000000 and #FFFFFF must be 21', function() {
                 expect(WCAGColorContrast.ratio('000000', 'FFFFFF')).toBe(21);
             });
 
-            it('#8883C4 and #1169FF', function() {
+            it('#000 and #FFF must be 21', function() {
+                expect(WCAGColorContrast.ratio('000', 'FFF')).toBe(21);
+            });
+
+            it('#8883C4 and #1169FF must be 1.36', function() {
                 expect(WCAGColorContrast.ratio('8883C4', '1169FF').toFixed(2)).toBe('1.36');
+            });
+
+            it('#x123 and #1169FF must throw Exception', function() {
+                var test = function() {
+                    WCAGColorContrast.ratio('x123', '1169FF')
+                };
+                expect(test).toThrow();
             });
         });
 

@@ -14,10 +14,13 @@ var dashcodePartSpecs = {
     "result": { "view": "DC.Text" },
     "text": { "text": "© 2012 Alexey Androsov, Sergey Gorobtsov", "view": "DC.Text" },
     "text1": { "text": "Licenced under GPLv3", "view": "DC.Text" },
-    "text2": { "text": "Текст #", "view": "DC.Text" },
-    "text3": { "text": "Фон #", "view": "DC.Text" },
-    "text4": { "text": "https://github.com/doochik/wcag-color-contrast", "view": "DC.Text" }
+    "text2": { "text": "Текст", "view": "DC.Text" },
+    "text3": { "text": "Фон", "view": "DC.Text" },
+    "text4": { "text": "https://github.com/doochik/wcag-color-contrast", "view": "DC.Text" },
+    "text5": { "text": "#", "view": "DC.Text" },
+    "text6": { "text": "#", "view": "DC.Text" }
 };
+
 
 
 

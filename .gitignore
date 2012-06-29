@@ -2,3 +2,4 @@
 atlassian-ide-plugin.xml
 osx_dashcode_widget.dcproj/*.wdgtuser
 WCAG Contast Checker.wdgt
+.DS_Store

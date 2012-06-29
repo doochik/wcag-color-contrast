@@ -162,10 +162,10 @@ function calcRatio() {
         }
 
         document.getElementById('example1').style.backgroundColor = '#' + rgb2;
-        document.getElementById('example1').style.border = '1px solid #' + rgb1;
+        document.getElementById('example1').style.border = '1px solid #c6c6c6';
 
         document.getElementById('example2').style.backgroundColor = '#' + rgb2;
-        document.getElementById('example2').style.border = '1px solid #' + rgb1;
+        document.getElementById('example2').style.border = '1px solid #c6c6c6';
 
     }
 }

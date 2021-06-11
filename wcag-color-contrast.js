@@ -45,7 +45,7 @@ var WCAGColorContrast = {
      */
     RGBtosRGB: function(rgb) {
         if (rgb.length === 3) {
-            rgb += rgb;
+            rgb = rgb[0] + rgb[0] + rgb[1] + rgb[1] + rgb[2] + rgb[2];
         }
         return [
             parseInt(rgb.slice(0,2), 16) / 255,

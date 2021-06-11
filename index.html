@@ -52,6 +52,10 @@
                 expect(WCAGColorContrast.ratio('000', 'FFF')).toBe(21);
             });
 
+            it('#123 and #FFF must be 16.15', function() {
+                expect(WCAGColorContrast.ratio('123', 'FFF').toFixed(2)).toBe('16.15');
+            });
+
             it('#8883C4 and #1169FF must be 1.36', function() {
                 expect(WCAGColorContrast.ratio('8883C4', '1169FF').toFixed(2)).toBe('1.36');
             });
